@@ -1,5 +1,19 @@
 @import url(reset.css);
 
+@font-face {
+    font-family: 'Director-Regular';
+    src: url(/assets/fonts/Director-Regular.otf),
+        url(/assets/fonts/Director-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Director-Light';
+    src: url(/assets/fonts/Director-Light.otf),
+        url(/assets/fonts/Director-Light.ttf);
+}
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -7,6 +21,26 @@
 body {
     background-color: teal;
     height: 100vh;
+    font-size: 2vw;
+    line-height: 1.1;
+    letter-spacing: .05rem;
+
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#imageContainer {
+    position: relative;
+}
+
+#image {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15rem;
 
 }
 
@@ -28,13 +62,15 @@ section {
 }
 
 section.poem1-container {
+
     background-color: azure;
     align-items: flex-start;
     border-right: solid 1px black;
-  
+
 }
 
 section.poem2-container {
+    font-style: italic;
     background-color: lightgoldenrodyellow;
     align-items: flex-end;
 
@@ -44,11 +80,13 @@ div.poem {
     width: fit-content;
 }
 
-/*
+
 div.stanza {
-    border: solid 1px whitesmoke;
+    /*border: solid 1px whitesmoke;*/
+    margin: 1em;
 }
 
+/*
 
 div.line {
     background-color: yellow;
@@ -57,10 +95,17 @@ div.line {
 }
 */
 @media only screen and (max-width: 571px) {
-    main.page-container {
-        flex-direction: column; 
-        width: 100%;    
+
+    
+    body {
+        font-size: 2vh;
     }
+
+    main.page-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
     section {
         height: 50%;
         width: 100%;
@@ -69,12 +114,12 @@ div.line {
     section.poem1-container {
         border-right: none;
         border-bottom: solid 1px black;
-      
+
     }
+
     section.poem2-container {
         justify-content: flex-end;
         align-items: flex-end;
-    
+
     }
 }
-
