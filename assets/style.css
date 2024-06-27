@@ -1,4 +1,4 @@
-@import url(/assets/reset.css);
+@import url(reset.css);
 
 * {
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body {
     background-color: teal;
-    padding: 2em;
+    height: 100vh;
 
 }
 
@@ -16,52 +16,65 @@ main.page-container {
     justify-content: space-between;
     flex-wrap: wrap;
     height: 100%;
-    padding: 2em;
 }
 
 section {
-    background-color: red;
-
+    height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: fit-content;
-    border: solid 1px blue;
     padding: 1em;
 }
 
 section.poem1-container {
+    background-color: azure;
     align-items: flex-start;
-
+    border-right: solid 1px black;
   
 }
 
 section.poem2-container {
+    background-color: lightgoldenrodyellow;
     align-items: flex-end;
 
 }
 
 div.poem {
-    width: 100%;
-    padding: 1em;
-    background-color: magenta;
+    width: fit-content;
 }
 
+/*
 div.stanza {
-    background-color: green;
-    padding: 1em;
     border: solid 1px whitesmoke;
 }
+
 
 div.line {
     background-color: yellow;
     border: solid 1px grey;
 
 }
+*/
+@media only screen and (max-width: 571px) {
+    main.page-container {
+        flex-direction: column; 
+        width: 100%;    
+    }
+    section {
+        height: 50%;
+        width: 100%;
+    }
 
-@media only screen and (max-width: 500px) {
-    div.page-container {
-        flex-direction: column;     
+    section.poem1-container {
+        border-right: none;
+        border-bottom: solid 1px black;
+      
+    }
+    section.poem2-container {
+        justify-content: flex-end;
+        align-items: flex-end;
+    
     }
 }
 
